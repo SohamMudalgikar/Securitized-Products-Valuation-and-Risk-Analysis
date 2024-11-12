@@ -71,24 +71,18 @@ Simulating realistic datasets is foundational for the analysis, enabling the mod
 **Prepayment Rate (CPR):**
 - Modeled using the Public Securities Association (PSA) prepayment model with added stochastic noise.
   
-  \[
-  \text{CPR}_t = \text{CPR}_{\text{PSA}}(t) + \epsilon
-  \]
+  $CPR_t = CPR_{PSA}(t) + \epsilon$
   Where $\epsilon$ is a random variable representing noise.
 
 **Default Probability (CDR):**
 - Estimated using logistic regression based on borrower attributes and macroeconomic variables.
   
-  \[
-  \text{CDR} = \frac{1}{1 + e^{-(\beta_0 + \beta_1 \cdot \text{Credit Score} + \beta_2 \cdot \text{DTI} + \beta_3 \cdot \text{Unemployment Rate})}}
-  \]
+  $CDR = \frac{1}{1 + e^{-(\beta_0 + \beta_1 \cdot \text{Credit Score} + \beta_2 \cdot \text{DTI} + \beta_3 \cdot \text{Unemployment Rate})}}$
 
 **Severity Rate:**
 - Calculated as a function of LTV ratio and economic conditions.
   
-  \[
-  \text{Severity} = \alpha \cdot \text{LTV} + \gamma \cdot \text{Economic Indicator}
-  \]
+  $Severity = \alpha \cdot \text{LTV} + \gamma \cdot \text{Economic Indicator}$
 
 #### Macroeconomic Data Simulation
 
@@ -96,9 +90,7 @@ Simulating realistic datasets is foundational for the analysis, enabling the mod
 - Simulated using the Vasicek or Cox-Ingersoll-Ross (CIR) models to capture mean-reverting behavior.
 
   - **Vasicek Model:**
-    \[
-    dr_t = \kappa (\theta - r_t) dt + \sigma dW_t
-    \]
+    $dr_t = \kappa (\theta - r_t) dt + \sigma dW_t$
     Where:
     - $\kappa$ = Speed of mean reversion
     - $\theta$ = Long-term mean rate
@@ -108,9 +100,7 @@ Simulating realistic datasets is foundational for the analysis, enabling the mod
 **Home Price Index (HPI):**
 - Modeled using Geometric Brownian Motion (GBM).
 
-  \[
-  dS_t = \mu S_t dt + \sigma S_t dW_t
-  \]
+  $dS_t = \mu S_t dt + \sigma S_t dW_t$
   Where:
   - $S_t$ = Home price index at time $t$
   - $\mu$ = Expected return
@@ -138,9 +128,7 @@ Valuation models estimate the present value of MBS by projecting future cash flo
 **Mathematical Representation:**
 
 - **Present Value of Cash Flows:**
-  \[
-  PV = \sum_{t=1}^{T} \frac{CF_t}{(1 + r_t)^t}
-  \]
+  $PV = \sum_{t=1}^{T} \frac{CF_t}{(1 + r_t)^t}$
   Where:
   - $CF_t$ = Cash flow at time $t$
   - $r_t$ = Discount rate at time $t$
@@ -158,9 +146,7 @@ Valuation models estimate the present value of MBS by projecting future cash flo
 
 **Mathematical Representation:**
 
-\[
-DCF = \sum_{t=1}^{T} \frac{CF_t}{(1 + r)^t}
-\]
+$DCF = \sum_{t=1}^{T} \frac{CF_t}{(1 + r)^t}$
 
 Where:
 - $CF_t$ = Cash flow at time $t$
@@ -186,16 +172,12 @@ Risk analysis quantifies the exposure of MBS to various risk factors, providing 
 **Duration:**
 - Measures the sensitivity of the MBS price to changes in interest rates.
 
-  \[
-  \text{Duration} = \frac{\sum_{t=1}^{T} t \cdot PV(CF_t)}{\sum_{t=1}^{T} PV(CF_t)}
-  \]
+$Duration = \frac{\sum_{t=1}^{T} t \cdot PV(CF_t)}{\sum_{t=1}^{T} PV(CF_t)}$
 
 **Convexity:**
 - Captures the rate of change in duration with respect to interest rate changes, providing a more accurate measure of interest rate risk.
 
-  \[
-  \text{Convexity} = \frac{\sum_{t=1}^{T} t(t + 1) \cdot PV(CF_t)}{\sum_{t=1}^{T} PV(CF_t)}
-  \]
+  $Convexity = \frac{\sum_{t=1}^{T} t(t + 1) \cdot PV(CF_t)}{\sum_{t=1}^{T} PV(CF_t)}$
 
 #### Option-Adjusted Spread (OAS)
 
@@ -205,9 +187,7 @@ Risk analysis quantifies the exposure of MBS to various risk factors, providing 
 **Calculation:**
 - Adjust the yield spread to account for the optionality, typically using models that incorporate prepayment behavior.
 
-  \[
-  \text{OAS} = \text{Yield Spread} - \text{Option Cost}
-  \]
+  $OAS = \text{Yield Spread} - \text{Option Cost}$
 
 #### Yield Spread Analysis
 
@@ -216,9 +196,7 @@ Risk analysis quantifies the exposure of MBS to various risk factors, providing 
 
 **Calculation:**
   
-  \[
-  \text{Yield Spread} = \text{MBS Yield} - \text{Benchmark Yield}
-  \]
+  $\text{Yield Spread} = \text{MBS Yield} - \text{Benchmark Yield}$
 
 ### Model Validation and Calibration
 
@@ -261,49 +239,33 @@ $X \sim \text{LogNormal}(\mu, \sigma^2)$
 
 #### Amortization Formula for Loan Balance
 
-\[
-B(t) = P \frac{(1 + r)^n - (1 + r)^t}{(1 + r)^n - 1}
-\]
+$B(t) = P \frac{(1 + r)^n - (1 + r)^t}{(1 + r)^n - 1}$
 
 #### Vasicek Interest Rate Model
 
-\[
-dr_t = \kappa (\theta - r_t) dt + \sigma dW_t
-\]
+$dr_t = \kappa (\theta - r_t) dt + \sigma dW_t$
 
 #### Geometric Brownian Motion for Home Price Index
 
-\[
-dS_t = \mu S_t dt + \sigma S_t dW_t
-\]
+$dS_t = \mu S_t dt + \sigma S_t dW_t$
 
 #### Present Value of Cash Flows
 
-\[
-PV = \sum_{t=1}^{T} \frac{CF_t}{(1 + r_t)^t}
-\]
+$PV = \sum_{t=1}^{T} \frac{CF_t}{(1 + r_t)^t}$
 
 #### Duration
 
-\[
-\text{Duration} = \frac{\sum_{t=1}^{T} t \cdot PV(CF_t)}{\sum_{t=1}^{T} PV(CF_t)}
-\]
+$\text{Duration} = \frac{\sum_{t=1}^{T} t \cdot PV(CF_t)}{\sum_{t=1}^{T} PV(CF_t)}$
 
 #### Convexity
 
-\[
-\text{Convexity} = \frac{\sum_{t=1}^{T} t(t + 1) \cdot PV(CF_t)}{\sum_{t=1}^{T} PV(CF_t)}
-\]
+$\text{Convexity} = \frac{\sum_{t=1}^{T} t(t + 1) \cdot PV(CF_t)}{\sum_{t=1}^{T} PV(CF_t)}$
 
 #### Option-Adjusted Spread (OAS)
 
-\[
-\text{OAS} = \text{Yield Spread} - \text{Option Cost}
-\]
+$\text{OAS} = \text{Yield Spread} - \text{Option Cost}$
 
 #### Yield Spread
 
-'''
-\text{Yield Spread} = \text{MBS Yield} - \text{Benchmark Yield}
-'''
+$\text{Yield Spread} = \text{MBS Yield} - \text{Benchmark Yield}$
 
