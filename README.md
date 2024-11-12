@@ -303,9 +303,7 @@ PV = \sum_{t=1}^{T} \frac{CF_t}{(1 + r_t)^t}
 
 #### Yield Spread
 
-\[
+'''
 \text{Yield Spread} = \text{MBS Yield} - \text{Benchmark Yield}
-\]
-
-
+'''
 
