@@ -51,20 +51,20 @@ Simulating realistic datasets is foundational for the analysis, enabling the mod
 
 - **Log-Normal Distribution for Original Loan Amount:**
 
- $ X \sim \text{LogNormal}(\mu, \sigma^2)$
+ $X \sim LogNormal(\mu, \sigma^2)$
 
-  Where \( \mu \) and \( \sigma \) are the parameters of the underlying normal distribution.
+  Where $\mu$ and $\sigma$ are the parameters of the underlying normal distribution.
 
 - **Amortization Schedule for Current Loan Balance:**
   
   $B(t) = P \frac{(1 + r)^n - (1 + r)^t}{(1 + r)^n - 1}$
   
   Where:
-  - \( B(t) \) = Balance at time \( t \)
-  - \( P \) = Original loan amount
-  - \( r \) = Monthly interest rate
-  - \( n \) = Total number of payments
-  - \( t \) = Number of payments made
+  - $B(t)$ = Balance at time $t$
+  - $P$ = Original loan amount
+  - $r$ = Monthly interest rate
+  - $n$ = Total number of payments
+  - $t$ = Number of payments made
 
 #### Prepayment and Default Data Simulation
 
@@ -74,7 +74,7 @@ Simulating realistic datasets is foundational for the analysis, enabling the mod
   \[
   \text{CPR}_t = \text{CPR}_{\text{PSA}}(t) + \epsilon
   \]
-  Where \( \epsilon \) is a random variable representing noise.
+  Where $\epsilon$ is a random variable representing noise.
 
 **Default Probability (CDR):**
 - Estimated using logistic regression based on borrower attributes and macroeconomic variables.
@@ -100,10 +100,10 @@ Simulating realistic datasets is foundational for the analysis, enabling the mod
     dr_t = \kappa (\theta - r_t) dt + \sigma dW_t
     \]
     Where:
-    - \( \kappa \) = Speed of mean reversion
-    - \( \theta \) = Long-term mean rate
-    - \( \sigma \) = Volatility
-    - \( W_t \) = Wiener process
+    - $\kappa$ = Speed of mean reversion
+    - $\theta$ = Long-term mean rate
+    - $\sigma$ = Volatility
+    - $W_t$ = Wiener process
 
 **Home Price Index (HPI):**
 - Modeled using Geometric Brownian Motion (GBM).
@@ -112,9 +112,9 @@ Simulating realistic datasets is foundational for the analysis, enabling the mod
   dS_t = \mu S_t dt + \sigma S_t dW_t
   \]
   Where:
-  - \( S_t \) = Home price index at time \( t \)
-  - \( \mu \) = Expected return
-  - \( \sigma \) = Volatility
+  - $S_t$ = Home price index at time $t$
+  - $\mu$ = Expected return
+  - $\sigma$ = Volatility
 
 **Unemployment Rates and Other Economic Indicators:**
 - Simulated using appropriate stochastic processes or historical data trends to influence prepayment and default behaviors.
@@ -142,9 +142,9 @@ Valuation models estimate the present value of MBS by projecting future cash flo
   PV = \sum_{t=1}^{T} \frac{CF_t}{(1 + r_t)^t}
   \]
   Where:
-  - \( CF_t \) = Cash flow at time \( t \)
-  - \( r_t \) = Discount rate at time \( t \)
-  - \( T \) = Total number of periods
+  - $CF_t$ = Cash flow at time $t$
+  - $r_t$ = Discount rate at time $t$
+  - $T$ = Total number of periods
 
 #### Discounted Cash Flow (DCF) Analysis
 
@@ -163,9 +163,9 @@ DCF = \sum_{t=1}^{T} \frac{CF_t}{(1 + r)^t}
 \]
 
 Where:
-- \( CF_t \) = Cash flow at time \( t \)
-- \( r \) = Discount rate
-- \( T \) = Total number of periods
+- $CF_t$ = Cash flow at time $t$
+- $r$ = Discount rate
+- $T$ = Total number of periods
 
 #### Scenario Testing
 
@@ -232,18 +232,14 @@ Ensuring the accuracy and reliability of the models through validation and calib
 1. **Historical Data Comparison:** Align simulated results with historical performance metrics.
 2. **Error Metrics Calculation:** Use metrics such as Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE) to quantify discrepancies.
 
-  \[
-  \text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
-  \]
+  $MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|$
 
-  \[
-  \text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}
-  \]
+  $RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}$
 
 Where:
-- \( y_i \) = Actual value
-- \( \hat{y}_i \) = Predicted value
-- \( n \) = Number of observations
+- $y_i$ = Actual value
+- $\hat{y}_i$ = Predicted value
+- $n$ = Number of observations
 
 #### Sensitivity Analysis
 
@@ -261,9 +257,7 @@ This section consolidates the key mathematical models and equations used through
 
 #### Log-Normal Distribution for Loan Amounts
 
-\[
-X \sim \text{LogNormal}(\mu, \sigma^2)
-\]
+$X \sim \text{LogNormal}(\mu, \sigma^2)$
 
 #### Amortization Formula for Loan Balance
 
