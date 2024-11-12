@@ -50,15 +50,15 @@ Simulating realistic datasets is foundational for the analysis, enabling the mod
 **Mathematical Representation:**
 
 - **Log-Normal Distribution for Original Loan Amount:**
-  \[
-  X \sim \text{LogNormal}(\mu, \sigma^2)
-  \]
+
+ $ X \sim \text{LogNormal}(\mu, \sigma^2)$
+
   Where \( \mu \) and \( \sigma \) are the parameters of the underlying normal distribution.
 
 - **Amortization Schedule for Current Loan Balance:**
-  \[
-  B(t) = P \frac{(1 + r)^n - (1 + r)^t}{(1 + r)^n - 1}
-  \]
+  
+  $B(t) = P \frac{(1 + r)^n - (1 + r)^t}{(1 + r)^n - 1}$
+  
   Where:
   - \( B(t) \) = Balance at time \( t \)
   - \( P \) = Original loan amount
